@@ -139,7 +139,7 @@ const process = (req, res, next) => {
     .then(values => {
         const outcome = approve ? 'approved' : 'rejected';
         n({
-            to: req.user.email,
+            to: values.User.email,
             bcc: values.map(role => role.User.email),
             subject: 'Application ' + outcome + '!',
             html: 'Your application #' + application_id + ' has been ' + outcome + '!'
