@@ -117,7 +117,7 @@ const get = (req, res, next) => {
 
 const process = (req, res, next) => {
     const { approve, application_id } = req.body;
-    const bcc;
+    let bcc;
 
     let data = {};
     let actions = [models.Application.update({
